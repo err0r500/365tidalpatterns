@@ -1,0 +1,14 @@
+
+with_fx :bitcrusher do
+  with_fx :reverb do
+    live_loop :amen do
+      sname = sample :ambi_haunted_hum
+      sample :ambi_lunar_land, attack:1
+      sleep sample_duration (:ambi_haunted_hum)
+    end
+    live_loop :amen2 do
+      sample :ambi_piano,attack: 3, rate:-2, pan:0
+      sleep sample_duration (:ambi_piano)
+    end
+  end
+end

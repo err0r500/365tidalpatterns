@@ -1,0 +1,23 @@
+do
+    let g1 = 0.9
+    let g2 = 0.8
+    let s1 = sound "birds:3" 
+            # n(irand 30) 
+            # gain g1 
+            # pan rand
+    let s2 = sound "bd*4 sn*3 arpy:3"
+            # gain "[[1 0.8]*2 [0.5 0.7]]/2" 
+            # lpf(slow 2 2000)
+            # gain g2
+            # speed sine 
+            # pan(slow 8 sine)
+    let s3 = every 2 (slow 4) $ 
+            sound "mbell [mbell, mbell] [mbell*3, mbell*4]" 
+            # pan(slow 2 sine)
+    let s4 = sound "[bottle:2(5, 9), bottle:2(6, 9)]" 
+            # gain 0.7
+    let s5 = sound "bd*4 arpy*3 bd*3"
+            # gain "[[1 0.8]*2 [0.5 0.7]]/1.5" 
+            # lpf(slow 2 1000)
+            # pan(slow 2 sine)
+    d1 $ stack [s1, s2, s3, s4, s5]

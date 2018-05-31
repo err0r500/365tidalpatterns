@@ -1,0 +1,8 @@
+do
+    let s1 = sound "[bd bs bd, sn [bd hh bd hh] sn bd]" 
+            # gain (slow 2 (sine)*0.5 + 0.5) 
+            # pan sine
+    let s2 = sound "[bs*5 bd, sn [bd hh bd hh] sn bd]" 
+            # gain (slow 4 (sine)*0.5 + 0.5) 
+            # pan (1 - sine)
+    d1 $ stack [s1, s2]

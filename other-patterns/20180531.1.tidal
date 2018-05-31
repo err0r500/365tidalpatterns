@@ -1,0 +1,4 @@
+do
+    let s1 = sound "db(5, 9)"
+    let s2 = whenmod 4 3 (fast 2) $  chop 12 $ sound "hh(3, 8)"
+    d1 $ stack [s1, s2]
