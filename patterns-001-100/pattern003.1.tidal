@@ -1,0 +1,15 @@
+d1 $ smash 2 [3,2,8,1] $ 
+    stack [every 3 (0.25 <~) $ 
+    every 4 rev $ 
+    every 2 (0.25 <~) $ 
+    striate 128 $ 
+    sound "[breaks125]" 
+    # gain 1
+    ]
+
+do
+    let masterGain = 1
+    let s1 = sound  "bd [bd bd bd] bd"
+             # gain masterGain
+             |*| gain 2
+    d1 $ stack [s1]
