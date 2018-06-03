@@ -1,0 +1,24 @@
+do
+    let s1 = stut 4 0.5 (1/4) $ 
+            slow 2 $ 
+            sound  "bd"
+                # gain (slow 4 (sine + 0.5))
+                # pan (slow 2 cosine)
+                # speed (slow 10 sine * 10 + 2)
+    let s2 = slow 2 $ 
+            every 2 (slow 2) $ 
+            stut 4 0.5 (1/4) $ 
+            sound  "~ bd"
+                # gain 1
+                # pan (slow 3 sine)
+    let s3 = every 5 (# speed 2) $ 
+            stut' 2 (1/3) (# vowel "{a e i o u}%3") $ 
+            sound  "bd bd"
+                # gain (slow 2 (rand / 2 + 0.9) )
+    let s4 = slow 4 $ 
+            every 2 (striate 30) $ 
+            sound "arpy arpy:6"
+                 # gain 0.7
+                 # speed (-0.2)
+    d1 $ stack [s1, s2, s3, s4] 
+        |*| gain 1

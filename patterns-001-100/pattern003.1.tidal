@@ -7,9 +7,3 @@ d1 $ smash 2 [3,2,8,1] $
     # gain 1
     ]
 
-do
-    let masterGain = 1
-    let s1 = sound  "bd [bd bd bd] bd"
-             # gain masterGain
-             |*| gain 2
-    d1 $ stack [s1]

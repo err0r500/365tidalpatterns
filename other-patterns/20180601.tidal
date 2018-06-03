@@ -5,7 +5,7 @@ do
                 slow 2 $ 
                 sound  "[bd*3 [sn? bd] sn] bd? [bd bd] [~ bd] bd bd ~ ~"
                 # gain 1
-                # lpf (slow 6 (sine * 1000 + 500))
+                # lpf (slow 2.5 (sine * 1000 + 500))
     let s2 = sometimes (stut 4 0.8 (-1)) $ 
                 sound "~ bd"
                 # gain 1
